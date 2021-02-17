@@ -1,7 +1,7 @@
 const {MongoClient, ObjectId} = require('mongodb');
 const {config} = require('../config');
 
-const USER = encodeURIComponent(config.dbUser);
+const USER = encodeURIComponent(config.dbUser); //encodeURIComponent reemplaza los careteres especiales por utf-8
 const PASSWORD = encodeURIComponent(config.dbPassword);
 const DB_NAME = config.dbName;
 
@@ -19,7 +19,7 @@ class MongoLib{
           if(err){
             reject(err);
           }
-          console.log('connected succesfully to mong');
+          console.log('connected succesfully to mongoDb');
           resolve(this.client.db(this.dbName));
         });
       });

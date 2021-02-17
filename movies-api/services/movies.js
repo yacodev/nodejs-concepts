@@ -18,12 +18,12 @@ class MoviesService{
     const createdMovieId = await this.mongoDB.create(this.collection,movie);
     return createdMovieId;
   }
-  async updateMovie({moviId, movie}={}){
-    const updatedMovieId = await this.mongoDB.create(this.collection,moviId,movie);
+  async updateMovie({movieId, movie}={}){
+    const updatedMovieId = await this.mongoDB.update(this.collection,movieId,movie);
     return updatedMovieId;
   }
-  async deleteMovie(){
-    const deletedMovieId = await this.mongoDB.delete(this.collection, moviId)
+  async deleteMovie({movieId}){
+    const deletedMovieId = await this.mongoDB.delete(this.collection, movieId)
     return deletedMovieId;
   }
 }

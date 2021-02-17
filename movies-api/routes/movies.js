@@ -1,10 +1,10 @@
 const express = require('express');
-const MovieService = require('../services/movies');
+const MoviesService = require('../services/movies');
 
 function moviesApp(app){
   const router = express.Router();
   app.use('/api/movies',router);
-  const moviesService = new MovieService();
+  const moviesService = new MoviesService();
 
   router.get('/', async function(req,res,next){
     const {tags} = req.query;
